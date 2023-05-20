@@ -503,7 +503,7 @@ private extension GameCollectionViewController
             {
                 cell.layer.shadowColor = UIColor.black.cgColor
                 cell.layer.shadowOffset = CGSize(width: 0, height: 3)
-                cell.imageView.layer.borderColor = UIColor.ignitedLightGray.cgColor
+                cell.imageView.layer.borderColor = UIColor.systemGray.cgColor
             }
         }
         
@@ -541,7 +541,6 @@ private extension GameCollectionViewController
         cell.imageSize = CGSize(width: layout.itemWidth, height: layout.itemWidth)
         
         cell.textLabel.text = game.isFavorite ? "☆ " + game.name : game.name
-        cell.textLabel.textColor = UIColor.ignitedLightGray
     }
     
     func updateImage(cell: GridCollectionViewGameCell, image: UIImage)

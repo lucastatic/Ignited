@@ -44,26 +44,26 @@ class GamesDatabaseBrowserViewController: UITableViewController
         self.prepareDataSource()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.ignitedDarkGray
+//        self.view.backgroundColor = UIColor.ignitedDarkGray
         
         self.tableView.register(GameTableViewCell.nib!, forCellReuseIdentifier: RSTCellContentGenericCellIdentifier)
         
         self.tableView.dataSource = self.dataSource
         self.tableView.prefetchDataSource = self.dataSource
         
-        self.tableView.indicatorStyle = .white
-        self.tableView.separatorColor = UIColor.gray
+//        self.tableView.indicatorStyle = .white
+//        self.tableView.separatorColor = UIColor.gray
         
         self.dataSource.searchController.delegate = self
-        self.dataSource.searchController.searchBar.barStyle = .black
+        self.dataSource.searchController.searchBar.barStyle = .default
         
         self.navigationItem.searchController = self.dataSource.searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
@@ -90,8 +90,8 @@ private extension GamesDatabaseBrowserViewController
     {
         /* Placeholder View */
         let placeholderView = RSTPlaceholderView()
-        placeholderView.textLabel.textColor = UIColor.lightText
-        placeholderView.detailTextLabel.textColor = UIColor.lightText
+//        placeholderView.textLabel.textColor = UIColor.lightText
+//        placeholderView.detailTextLabel.textColor = UIColor.lightText
         self.dataSource.placeholderView = placeholderView
         
         
@@ -147,7 +147,7 @@ private extension GamesDatabaseBrowserViewController
 {
     func configure(cell: GameTableViewCell, with metadata: GameMetadata, for indexPath: IndexPath)
     {
-        cell.backgroundColor = UIColor.ignitedDarkGray
+//        cell.backgroundColor = UIColor.ignitedDarkGray
         
         cell.nameLabel.text = metadata.name ?? NSLocalizedString("Unknown", comment: "")
         cell.artworkImageView.image = #imageLiteral(resourceName: "NES")
@@ -158,7 +158,7 @@ private extension GamesDatabaseBrowserViewController
         cell.artworkImageView.contentMode = .scaleToFill
         
         cell.artworkImageView.tintColor = UIColor.white
-        cell.artworkImageView.layer.borderColor = UIColor.ignitedLightGray.cgColor
+        cell.artworkImageView.layer.borderColor = UIColor.systemGray.cgColor
         cell.artworkImageView.backgroundColor = self.view.tintColor.darker(componentDelta: 0.1)
         
         cell.artworkImageViewLeadingConstraint.constant = 15
