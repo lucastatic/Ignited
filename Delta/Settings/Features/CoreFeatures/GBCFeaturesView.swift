@@ -10,9 +10,8 @@ import SwiftUI
 import Combine
 
 import Features
-import GBCDeltaCore
 
-extension GBCDeltaCoreFeaturesView
+extension GBCFeaturesView
 {
     private class ViewModel: ObservableObject
     {
@@ -29,7 +28,7 @@ extension GBCDeltaCoreFeaturesView
     }
 }
 
-struct GBCDeltaCoreFeaturesView: View
+struct GBCFeaturesView: View
 {
     @StateObject
     private var viewModel: ViewModel = ViewModel()
@@ -57,11 +56,11 @@ struct GBCDeltaCoreFeaturesView: View
     }
 }
 
-extension GBCDeltaCoreFeaturesView
+extension GBCFeaturesView
 {
     static func makeViewController() -> UIHostingController<some View>
     {
-        let featuresView = GBCDeltaCoreFeaturesView()
+        let featuresView = GBCFeaturesView()
         
         let hostingController = UIHostingController(rootView: featuresView)
         hostingController.title = NSLocalizedString("GBC Features", comment: "")

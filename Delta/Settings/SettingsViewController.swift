@@ -262,9 +262,9 @@ private extension SettingsViewController
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
-    func showGBCDeltaCoreFeatures()
+    func showGBCFeatures()
     {
-        let hostingController = GBCDeltaCoreFeaturesView.makeViewController()
+        let hostingController = GBCFeaturesView.makeViewController()
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
@@ -579,7 +579,7 @@ extension SettingsViewController
             case .ds:
                 self.performSegue(withIdentifier: Segue.dsSettings.rawValue, sender: cell)
             case .gbc:
-                self.showGBCDeltaCoreFeatures()
+                self.showGBCFeatures()
             }
             
         case .patreon:
