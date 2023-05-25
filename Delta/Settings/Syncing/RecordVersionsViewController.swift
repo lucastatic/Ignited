@@ -363,6 +363,8 @@ private extension RecordVersionsViewController
             self.restoreVersion()
         })
         
+        alertController.popoverPresentationController?.sourceView = self.view
+        
         self.present(alertController, animated: true, completion: nil)
     }
 }
